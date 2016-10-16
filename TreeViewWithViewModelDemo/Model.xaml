@@ -1,0 +1,31 @@
+﻿<Window x:Class="TreeViewWithViewModelDemo.Model"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TreeViewWithViewModelDemo"
+        mc:Ignorable="d"
+        Title="Model" Height="408.653" Width="700">
+    <Grid  Height="366.684" VerticalAlignment="Top"
+           Name="Models" Margin="0,0,2,-7.684">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350" Name="Maize"
+                              />
+            <ColumnDefinition Width="350" Name="Potato"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left"
+                Height="346.684" Margin="10,10,0,0" VerticalAlignment="Top" Width="330">
+            
+            <Button Width="75" Height="200" Name="btn_Maize" VerticalAlignment="Center" Click="btn_Maize_Click">
+                <StackPanel>
+                    <Image Source="C:\Users\dennis.timlin\Documents\Visual Studio 2015\Projects\Examples\TreeViewWithViewModelDemo\TreeViewWithViewModelDemo\MaizePlant.jpg" Height="159.727" RenderTransformOrigin="0.5,0.5"/>
+                 </StackPanel>
+            </Button>
+           
+           
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="346.684" Margin="10,10,0,0" VerticalAlignment="Top" Width="320"/>
+        <TextBlock FontSize="20" VerticalAlignment="top" HorizontalAlignment="Center" Text="Maizsim" Margin="138.71,26.424,138.71,0"/>
+    </Grid>
+
+</Window>
