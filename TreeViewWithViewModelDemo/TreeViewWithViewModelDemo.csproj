@@ -120,6 +120,7 @@
     <Compile Include="LoadOnDemand\LoadOnDemandDemoControl.xaml.cs">
       <DependentUpon>LoadOnDemandDemoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoadOnDemand\ViewModel\BaseViewModel.cs" />
     <Compile Include="LoadOnDemand\ViewModel\CityViewModel.cs" />
     <Compile Include="LoadOnDemand\ViewModel\StateViewModel.cs" />
     <Compile Include="LoadOnDemand\ViewModel\TreeViewItemViewModel.cs" />

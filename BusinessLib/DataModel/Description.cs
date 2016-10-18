@@ -27,7 +27,5 @@
         public string Biology { get; private set; }
 
         #endregion
-
-        public string CityName { get; private set; }
     }
 }
