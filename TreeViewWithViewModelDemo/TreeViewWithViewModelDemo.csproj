@@ -87,53 +87,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="View\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="LoadOnDemand\LoadOnDemandDemoControl.xaml">
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\ModelDataView.xaml.cs">
+      <DependentUpon>ModelDataView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Model.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TextSearch\TextSearchDemoControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="DemoWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DemoWindow.xaml.cs">
-      <DependentUpon>DemoWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Page Include="View\ModelDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoadOnDemand\LoadOnDemandDemoControl.xaml.cs">
-      <DependentUpon>LoadOnDemandDemoControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoadOnDemand\ViewModel\BaseViewModel.cs" />
-    <Compile Include="LoadOnDemand\ViewModel\CityViewModel.cs" />
-    <Compile Include="LoadOnDemand\ViewModel\StateViewModel.cs" />
-    <Compile Include="LoadOnDemand\ViewModel\TreeViewItemViewModel.cs" />
-    <Compile Include="LoadOnDemand\ViewModel\RegionViewModel.cs" />
-    <Compile Include="LoadOnDemand\ViewModel\CountryViewModel.cs" />
-    <Compile Include="Model.xaml.cs">
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="View\Model.xaml.cs">
       <DependentUpon>Model.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TextSearch\TextSearchDemoControl.xaml.cs">
-      <DependentUpon>TextSearchDemoControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TextSearch\ViewModel\FamilyTreeViewModel.cs" />
-    <Compile Include="TextSearch\ViewModel\PersonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -158,9 +138,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="LoadOnDemand\Images\Region.png" />
-    <Resource Include="LoadOnDemand\Images\State.png" />
-    <Resource Include="LoadOnDemand\Images\City.png" />
+    <Resource Include="Helpers\Images\Region.png" />
+    <Resource Include="Helpers\Images\State.png" />
+    <Resource Include="Helpers\Images\City.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLib\BusinessLib.csproj">

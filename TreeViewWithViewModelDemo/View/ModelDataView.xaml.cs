@@ -11,22 +11,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace TreeViewWithViewModelDemo
+namespace TreeViewWithViewModelDemo.View
 {
     /// <summary>
-    /// Interaction logic for Model.xaml
+    /// Interaction logic for ModelDataView.xaml
     /// </summary>
-    public partial class Model : Window
+    public partial class ModelDataView : Window
     {
-        public Model()
+        public ModelDataView()
         {
             InitializeComponent();
-        }
-
-        private void btn_Maize_Click(object sender, RoutedEventArgs e)
-        {
-            var newWindow = new DemoWindow();
-            newWindow.Show();
         }
     }
 }

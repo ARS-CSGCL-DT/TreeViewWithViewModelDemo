@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace TreeViewWithViewModelDemo.LoadOnDemand.ViewModel
+namespace TreeViewWithViewModelDemo.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged, IDisposable
     {
