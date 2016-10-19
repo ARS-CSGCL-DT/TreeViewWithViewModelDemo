@@ -18,7 +18,7 @@
             
             <Button Width="75" Height="200" Name="btn_Maize" VerticalAlignment="Center" Click="btn_Maize_Click">
                 <StackPanel>
-                    <Image Source="C:\Users\dennis.timlin\Documents\Visual Studio 2015\Projects\Examples\TreeViewWithViewModelDemo\TreeViewWithViewModelDemo\MaizePlant.jpg" Height="159.727" RenderTransformOrigin="0.5,0.5"/>
+                    <Image Source="/helpers/images/MaizePlant.jpg" Height="159.727" RenderTransformOrigin="0.5,0.5"/>
                  </StackPanel>
             </Button>
            

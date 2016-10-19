@@ -39,8 +39,8 @@ namespace BusinessLib
         {
             string connectionString = GetConnectionString();
             connection = new OleDbConnection(connectionString);
-            result = OpenConnection();
-            string commandText = string.Format("Select * from [{0}$]", TableName);
+            //result = OpenConnection();
+            string commandText = string.Format("Select ID, Path from [{0}$]", TableName);
 
             OleDbDataAdapter da = new OleDbDataAdapter(commandText, connection);
             DataSet temp = new DataSet();
@@ -52,9 +52,9 @@ namespace BusinessLib
         private string GetConnectionString()
         {
             Dictionary<string, string> props = new Dictionary<string, string>();
-            props["Provider"] = "Microsoft.ACE.OLEDB.12.0;";
+            props["Provider"] = "Microsoft.ACE.OLEDB.12.0";
             props["Extended Properties"] = "Excel 12.0 XML";
-            props["Data Source"] = "D:\\MAIZSIM07\\Taiwan\\Wufeng inputs.xlsx";
+            props["Data Source"] ="D:\\MAIZSIM07\\Taiwan\\Wufeng inputs.xlsx" ;
             StringBuilder sb = new StringBuilder();
 
             foreach (KeyValuePair<string, string> prop in props)
