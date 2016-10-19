@@ -34,20 +34,13 @@ namespace BusinessLib
             get; set;
         }
         
-        public   void Initialize()
-        {
-
-            string connectionString = GetConnectionString();
-            connection = new OleDbConnection(connectionString);
-            result = OpenConnection();
-        }
-
+       
         public bool GetFileData(string TableName)
         {
             string connectionString = GetConnectionString();
             connection = new OleDbConnection(connectionString);
             result = OpenConnection();
-            string commandText = string.Format("Select * from { 0}", TableName);
+            string commandText = string.Format("Select * from [{0}$]", TableName);
 
             OleDbDataAdapter da = new OleDbDataAdapter(commandText, connection);
             DataSet temp = new DataSet();
