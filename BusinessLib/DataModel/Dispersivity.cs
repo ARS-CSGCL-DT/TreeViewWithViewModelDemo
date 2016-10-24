@@ -12,21 +12,21 @@ namespace BusinessLib.DataModel
         
             public Dispersivity()
             {
-                
+            
             }
 
 
-           readonly List<Parameters> _parameters = new List<Parameters>();
-            public List<Parameters> Parameters
+           readonly List<Parameter> _parameters = new List<Parameter>();
+            public List<Parameter> Parameters
             {
                 get { return _parameters; }
             }
         
     }
 
-    public class Parameters
+    public class Parameter
     {
-        public Parameters()
+        public Parameter()
         {
         }
 

@@ -48,18 +48,20 @@ namespace BusinessLib
             get; set;
         }
 
-
-        public static Dispersivity[]  GetParameters()
+        #region GetDispersivity
+        
+        public static Dispersivity[]  parameters()
         {
-            return new Parameters[]
+            return  new Dispersivity[]
             {
-                new Parameters("loam",4.6);
-                new Parameters("loamy sand",1.6);
-            new Parameters("sand", 0.8);
+                
+                new Dispersivity {texturecl="loam",alpha=4.6 },
+                new Dispersivity {texturecl= "loamy sand",alpha=1.6 },
+                new Dispersivity {texturecl ="sand", alpha=0.8 }
               
             };
         }
-        
+        #endregion
         public bool GetTableNames()
         {
             string connectionString = GetConnectionString();
