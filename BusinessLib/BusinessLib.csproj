@@ -98,6 +98,7 @@
   <ItemGroup>
     <Compile Include="DataAccess\Database.cs" />
     <Compile Include="DataModel\Description.cs" />
+    <Compile Include="DataModel\Dispersivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,17 @@
-﻿namespace BusinessLib
+﻿namespace BusinessLib.DataModel;
 {
     public class Description  // use INotifyPropertyChanged Later when we need to change it
     {
         #region
+        public Description()
+        {
+            this.TableName = "Description";
+
+        }
+
+        public string TableName;
+        public string parameter { get; set; }
+
         string _ID;
         public string ID { get; private set; }
         string _SoilFile;

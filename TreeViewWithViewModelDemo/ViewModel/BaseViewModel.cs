@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-
+/// <summary>
+///  Using this for the grid view- it is the base class for the MainViewModel
+///  
+/// </summary>
 namespace TreeViewWithViewModelDemo.ViewModel
 {
     public abstract class BaseViewModel : INotifyPropertyChanged, IDisposable

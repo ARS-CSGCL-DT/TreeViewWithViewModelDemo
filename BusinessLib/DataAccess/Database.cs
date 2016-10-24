@@ -4,6 +4,8 @@ using System.Text;
 using System.Windows;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Linq;
+using BusinessLib.DataModel;
 
 namespace BusinessLib
 {
@@ -16,31 +18,65 @@ namespace BusinessLib
     /// might want to consider observable collections later
     /// Some of this has been adapted from:
     /// http://www.codeproject.com/Articles/35805/MVVM-in-WPF-Part-II
+    /// So far this can return a list of id's (as a table) and a list of tablenames (as a list)
     /// </summary>
     public class Database
     {
 
         private   OleDbConnection connection;
-        public   OleDbConnection GetConnection() { return connection; }
+        private   OleDbConnection GetConnection() { return connection; }
         private   bool result;
         public   bool GetResult() { return result; }
 
         public   Database()
         {
             FileData = new DataTable();
+            TableNames = new DataTable();
+            ListTable = new List<DataRow>();
         }
         public   DataTable FileData
         {
             get; set;
         }
+
+        public DataTable TableNames
+        {
+            get; set;
+        }
+        public List<DataRow> ListTable
+        {
+            get; set;
+        }
+
+
+        public static Dispersivity[]  GetParameters()
+        {
+            return new Parameters[]
+            {
+                new Parameters("loam",4.6);
+                new Parameters("loamy sand",1.6);
+            new Parameters("sand", 0.8);
+              
+            };
+        }
         
-       
+        public bool GetTableNames()
+        {
+            string connectionString = GetConnectionString();
+            connection = new OleDbConnection(connectionString);
+            //result = OpenConnection();
+            DataTable dtSchema;
+            dtSchema=connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, new object[] { null, null, null, "TABLE" });
+            ListTable = dtSchema.AsEnumerable().ToList();
+            return true;
+        }
+
         public bool GetFileData(string TableName)
         {
             string connectionString = GetConnectionString();
             connection = new OleDbConnection(connectionString);
             //result = OpenConnection();
-            string commandText = string.Format("Select ID, Path from [{0}$]", TableName);
+            string commandText = string.Format("Select * from [{0}$]", TableName);
 
             OleDbDataAdapter da = new OleDbDataAdapter(commandText, connection);
             DataSet temp = new DataSet();

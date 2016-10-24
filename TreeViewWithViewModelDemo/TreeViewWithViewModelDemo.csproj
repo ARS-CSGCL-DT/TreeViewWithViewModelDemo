@@ -117,13 +117,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="ViewModel\LoadOnDemandDemoControl.xaml.cs">
+      <DependentUpon>LoadOnDemandDemoControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\TableViewModel.cs" />
+    <Compile Include="ViewModel\TreeViewItemViewModel.cs" />
     <Compile Include="View\ModelDataView.xaml.cs">
       <DependentUpon>ModelDataView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TreeView.xaml.cs">
       <DependentUpon>TreeView.xaml</DependentUpon>
     </Compile>
+    <Page Include="ViewModel\LoadOnDemandDemoControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\Model.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
